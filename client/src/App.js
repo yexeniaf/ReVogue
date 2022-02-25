@@ -4,6 +4,7 @@ import {useEffect, useState } from 'react';
 import Home from './components/Home';
 import ItemsContainer from './containers/ItemsContainer';
 import Login from './components/Login';
+import Signup from './components/Signup';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path="/" element= {<Home />} />
         <Route path="/items" element= {<ItemsContainer />} />
         <Route path="/login" element= {<Login />} />
-        <Route path="/signup" element= {<h1>Sign Up Page</h1>} />
+        <Route path="/signup" element= {<Signup />} />
       </Routes>
     </div>
   );
