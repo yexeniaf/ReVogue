@@ -24,6 +24,23 @@ export const signupUser = async (signupData) => {
     return res.data
 }
 
+///Verifying a user 
+export const verifyUser = async () => {
+    /// Assiging a toekn from localStorage
+    const token = localStorage.getitem('authToken')
+    // if token exist
+    if (token) {
+        /// sends the token 
+        api.defaults.headers.common.authorization = `Bearer ${token}`
+        ///Making a call to the backend verify route
+        const res = await api.get('/auth/verify')
+        ///Returns reponse
+        return res.data
+    } else {
+        return false 
+    }
+}
+
 ///Getting all users
 export const getAllUsers = async () => {
     ///Making api call for all users
