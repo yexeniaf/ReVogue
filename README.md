@@ -19,7 +19,7 @@ _The **ReVogue** MVP  is to have a full CRUD app that has a fully functional fro
 - _BACKEND_
 - _Have a database with 3 tables_
 - _Define models in Rails to interact with my database_
-- _Implement working controllers for FUll CRUD_
+- _Implement working controllers for Full CRUD_
 - _Have styling that goes with the theme of the app_
 - _FRONTEND_
 - _have 8 components_
