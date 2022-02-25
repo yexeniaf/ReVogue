@@ -21,7 +21,7 @@ export default function Signup(props) {
         const res = signupUser(user)
         props.setCurrentUser(res)
 
-        // navigate("/")
+        navigate("/")
     }}>
         <input
             type = "text"
