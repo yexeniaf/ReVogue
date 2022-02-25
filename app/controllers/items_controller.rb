@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy, :get_user_items]
 
   # GET /items
   def index
@@ -8,9 +9,14 @@ class ItemsController < ApplicationController
     render json: @items
   end
 
+  def get_user_items
+    @user = User.find(params[:user_id])
+    render json: @user.products
+  end
+
   # GET /items/1
   def show
-    render json: @item
+    render json: @item, include: :reviews
   end
 
   # POST /items
