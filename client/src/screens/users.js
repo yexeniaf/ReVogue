@@ -15,7 +15,7 @@ export const loginUser = async (loginData) => {
 ///Signing up a user
 export const signupUser = async (signupData) => {
     ///Making an axios call to run the create methond
-    const res = await api.post('/users', signupData)
+    const res = await api.post('/users', {user: signupData})
     /// Stores our token on the front it with localStorage using a key and value.
     localStorage.setItem('authToken', res.data.token)
      ///Defaults our headers and assign it to be our token
@@ -60,7 +60,7 @@ export const getOneUser = async (user_id) => {
 ///Updating a user 
 export const updateUser = async (user_id, updateData) => {
     /// Axios call with a put request 
-    const res = await api.put(`/users/${user_id}`, updateData)
+    const res = await api.put(`/users/${user_id}`, {user: updateData})
     ///Return the updated data
     return res.data
 }

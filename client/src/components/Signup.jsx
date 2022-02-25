@@ -18,7 +18,7 @@ export default function Signup(props) {
             email, 
             password
         }
-        const res = signupUser({user})
+        const res = signupUser(user)
         props.setCurrentUser(res)
 
         // navigate("/")
