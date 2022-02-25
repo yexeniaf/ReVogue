@@ -1,10 +1,17 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show update destroy ]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /comments
   def index
-    @comments = Comment.all
+    @items = Item.find(params[:item_id])
+    @comments = @item.comments
 
+    render json: @comments, include: :user
+  end
+
+  def get_all_comments
+    @comments = Comment.all
     render json: @comments
   end
 
@@ -16,9 +23,11 @@ class CommentsController < ApplicationController
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = @current_user
+    @comment.item_id = params[:item_id]
 
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: @comment, status: :created
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
@@ -36,6 +45,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   def destroy
     @comment.destroy
+    render json: @comment
   end
 
   private
