@@ -27,7 +27,7 @@ export const signupUser = async (signupData) => {
 ///Verifying a user 
 export const verifyUser = async () => {
     /// Assiging a toekn from localStorage
-    const token = localStorage.getitem('authToken')
+    const token = localStorage.getItem('authToken')
     // if token exist
     if (token) {
         /// sends the token 
