@@ -5,18 +5,16 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login(props) {
   const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+  const [password, setPassword] = useState("")
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
 
   return (
     <form onSubmit={async (e) => {
         e.preventDefault()
         const user = {
-            username, 
-            email, 
+            username,  
             password
         }
         const res = loginUser(user)
@@ -28,11 +26,6 @@ export default function Login(props) {
             type = "text"
             value ={username}
             onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-            type = "text"
-            value ={email}
-            onChange={(e) => setEmail(e.target.value)}
         />
         <input
             type = "password"
