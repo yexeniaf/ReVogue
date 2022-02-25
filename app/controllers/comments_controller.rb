@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   # GET /comments
   def index
-    @items = Item.find(params[:item_id])
+    @item = Item.find(params[:item_id])
     @comments = @item.comments
 
     render json: @comments, include: :user
