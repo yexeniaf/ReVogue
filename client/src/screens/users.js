@@ -23,3 +23,11 @@ export const signupUser = async (signupData) => {
     ///Returns the signup
     return res.data
 }
+
+///Getting all users
+export const getAllUsers = async () => {
+    ///Making api call for all users
+    const res = await api.get('/users')
+    /// Returns all users
+    return res.data
+}
