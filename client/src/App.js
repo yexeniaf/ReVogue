@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import {useEffect, useState } from 'react';
 import Home from './components/Home';
 import ItemsContainer from './containers/ItemsContainer';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element= {<Home />} />
         <Route path="/items" element= {<ItemsContainer />} />
-        <Route path="/login" element= {<h1>Login Page</h1>} />
+        <Route path="/login" element= {<Login />} />
         <Route path="/signup" element= {<h1>Sign Up Page</h1>} />
       </Routes>
     </div>
