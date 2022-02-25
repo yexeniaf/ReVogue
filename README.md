@@ -128,7 +128,7 @@ src
 
 #### ERD Model
 
-![Screen Shot 2022-02-24 at 10 25 06 AM](https://user-images.githubusercontent.com/92563217/155554071-7f23a79c-0383-40cf-a24c-f3448837a983.png)
+![Screen Shot 2022-02-25 at 12 52 38 AM](https://user-images.githubusercontent.com/92563217/155662025-a139bba4-d9f2-482b-af97-eff5a59c5540.png)
 
 ***
 
