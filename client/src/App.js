@@ -19,11 +19,14 @@ useEffect (() => {
   getUser()
 }, [])
 
-
+  const logout = () => {
+    localStorage.removeItem('authToken')
+    setCurrentUser(null)
+  }
 
   return (
     <div className="App">
-      <Navbar currentUser={currentUser}/>
+      <Navbar currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element= {<Home />} />
         <Route path="/items" element= {<ItemsContainer />} />

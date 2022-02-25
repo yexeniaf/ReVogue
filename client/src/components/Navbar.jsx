@@ -7,7 +7,7 @@ export default function Navbar(props) {
         {props.currentUser ?
             <>
                 <h3>Welcome back, {props.currentUser.username}!</h3>
-                <button>Log Out</button>
+                <button onClick={props.logout}>Log Out</button>
             </>
             :
             <>
