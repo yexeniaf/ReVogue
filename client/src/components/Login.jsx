@@ -1,9 +1,46 @@
 import React from 'react'
+import { useState } from 'react'
+import { loginUser } from '../screens/users';
+import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Login(props) {
+  const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const navigate = useNavigate()
+
+
   return (
-    <div>
-        <h1>Login Page</h1>
-    </div>
+    <form onSubmit={async (e) => {
+        e.preventDefault()
+        const user = {
+            username, 
+            email, 
+            password
+        }
+        const res = loginUser(user)
+        props.setCurrentUser(res)
+
+        navigate("/")
+    }}>
+        <input
+            type = "text"
+            value ={username}
+            onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+            type = "text"
+            value ={email}
+            onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+            type = "password"
+            value ={password}
+            onChange={(e) => setPassword(e.target.value)}
+        />
+        <button>Login</button>
+
+    </form>
   )
 }
