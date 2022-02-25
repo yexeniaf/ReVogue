@@ -6,6 +6,7 @@ import Home from './components/Home';
 import ItemsContainer from './containers/ItemsContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Navbar from './components/Navbar';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -22,6 +23,7 @@ useEffect (() => {
 
   return (
     <div className="App">
+      <Navbar currentUser={currentUser}/>
       <Routes>
         <Route path="/" element= {<Home />} />
         <Route path="/items" element= {<ItemsContainer />} />
