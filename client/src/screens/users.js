@@ -31,3 +31,27 @@ export const getAllUsers = async () => {
     /// Returns all users
     return res.data
 }
+
+///Getting one user
+export const getOneUser = async (user_id) => {
+    ///Making api call for one user with their id 
+    const res = await api.get(`/users/${user_id}`)
+    /// Returns specific user 
+    return res.data
+}
+
+///Updating a user 
+export const updateUser = async (user_id, updateData) => {
+    /// Axios call with a put request 
+    const res = await api.put(`/users/${user_id}`, updateData)
+    ///Return the updated data
+    return res.data
+}
+
+///Deleting a user
+export const deleteUser = async (user_id) => {
+    /// Calling axios call for deletion 
+    const res = await api.delete(`/users/${user_id}`)
+    /// returing the delete request
+    return res.data
+}
