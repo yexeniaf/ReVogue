@@ -11,17 +11,18 @@ class ItemsController < ApplicationController
 
   def get_user_items
     @user = User.find(params[:user_id])
-    render json: @user.products
+    render json: @user.items
   end
 
   # GET /items/1
   def show
-    render json: @item, include: :reviews
+    render json: @item, include: :comments
   end
 
   # POST /items
   def create
     @item = Item.new(item_params)
+    @item.user = @current_user
 
     if @item.save
       render json: @item, status: :created, location: @item
@@ -42,6 +43,7 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   def destroy
     @item.destroy
+    render json: @item
   end
 
   private
