@@ -29,7 +29,7 @@ useEffect (() => {
       <Navbar currentUser={currentUser} logout={logout}/>
       <Routes>
         <Route path="/" element= {<Home />} />
-        <Route path="/items" element= {<ItemsContainer />} />
+        <Route path="/items/*" element= {<ItemsContainer />} />
         <Route path="/login" element= {<Login setCurrentUser={setCurrentUser}/>} />
         <Route path="/signup" element= {<Signup setCurrentUser={setCurrentUser} />} />
       </Routes>
