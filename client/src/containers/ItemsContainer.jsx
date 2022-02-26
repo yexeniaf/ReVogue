@@ -17,7 +17,14 @@ export default function ItemsContainer() {
 
     
     <div>
-      
+      {
+        items.map (product => (
+          <div>
+            <img src={product.image_url}/>
+            <h4>{product.title}</h4>
+          </div>
+        ))
+      }
     </div>
   )
 }
