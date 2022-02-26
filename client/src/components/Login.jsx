@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { loginUser } from '../screens/users';
+import { loginUser } from '../services/users';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login(props) {

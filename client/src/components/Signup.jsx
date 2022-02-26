@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { signupUser } from '../screens/users';
+import { signupUser } from '../services/users';
 import { useNavigate } from 'react-router-dom';
 
 export default function Signup(props) {

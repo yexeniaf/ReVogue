@@ -1,7 +1,7 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom';
 import {useEffect, useState } from 'react';
-import {verifyUser} from './screens/users';
+import {verifyUser} from './services/users';
 import Home from './components/Home';
 import ItemsContainer from './containers/ItemsContainer';
 import Login from './components/Login';
