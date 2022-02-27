@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
 import {  getAllItems } from '../services/items';
+import ItemDetail from '../components/ItemDetail';
 
 export default function ItemsContainer() {
   const [items, setItems] = useState([])
@@ -18,13 +19,18 @@ export default function ItemsContainer() {
     
     <div>
       {
-        items.map (product => (
-          <div>
-            <img src={product.image_url}/>
-            <h4>{product.title}</h4>
-          </div>
+        items.map (item => (
+          <Link key={item.id} to={`/items/${item.id}`}>
+            <img src={item.image_url}/>
+            <h4>{item.title}</h4>
+          </Link>
         ))
       }
+
+      <Routes>
+        <Route path='/:id' element= {<ItemDetail />}/>
+      </Routes>
     </div>
+   
   )
 }

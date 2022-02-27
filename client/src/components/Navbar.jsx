@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom'
 export default function Navbar(props) {
   return (
     <div>
-      <Link to='/item'>Items</Link>
+      <Link to="/"><h1>ReVogue</h1></Link>
+      <Link to='/items'>Items</Link>
       {props.currentUser ?
         <>
           <h3>Welcome, {props.currentUser.user}!</h3>
