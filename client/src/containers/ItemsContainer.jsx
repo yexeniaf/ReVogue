@@ -32,21 +32,46 @@ export default function ItemsContainer(props) {
     navigate(`/items/${id}`)
   }
 
+  const handleDelete = async (id) => {
+    await deleteItem(id)
+    setToggle(prevToggle => !prevToggle)
+    navigate('/items')
+  }
+
+
   return (
 
-    
     <div>
-      {
-        items.map (item => (
-          <Link key={item.id} to={`/items/${item.id}`}>
-            <img src={item.image_url}/>
-            <h4>{item.title}</h4>
-          </Link>
-        ))
-      }
-
+      
       <Routes>
-        <Route path='/:id' element= {<ItemDetail />}/>
+        <Route 
+          path='/' 
+          element={<Items 
+            items={items} 
+            currentUser={props.currentUser}
+          />}
+        />
+        <Route 
+          path='/create' 
+          element= {<CreateItem
+            handleCreate={handleCreate}
+          />}
+        />
+        <Route
+          path='/:id/edit'
+          element= {<ItemEdit
+            handleEdit={handleEdit}
+            items={items}
+          />}
+        />
+        <Route
+          path='/:id'
+          element= {<ItemDetail
+            items={items}
+            handleDelete={handleDelete}
+            currentUser={props.currentUser}
+          />}
+        />
       </Routes>
     </div>
    
