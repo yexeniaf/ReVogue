@@ -8,7 +8,7 @@ export default function Comments(props) {
           <div key={comment.id}>
             <h3>{comment.title}</h3>
             <h4>Author: {comment.user.username}</h4>
-            <h5>{comment.stars} stars</h5>
+            <h5>{comment.potentialBuyer} Potential Buyer</h5>
             <p>{comment.content}</p>
 
             {
