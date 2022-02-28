@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Comments(props) {
   return (
-    <div className='container overflow-y-scroll border-8'>
+    <div className=' comment-container overflow-scroll border-8'>
       <h1>Comment Section:</h1>
     <div >
       {props.comments && 

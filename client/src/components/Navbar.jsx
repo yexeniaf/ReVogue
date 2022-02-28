@@ -1,6 +1,8 @@
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 import { Disclosure} from '@headlessui/react'
 import {MenuIcon, XIcon } from '@heroicons/react/outline'
+
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -32,7 +34,7 @@ export default function Navbar(props) {
                     {props.currentUser ?
                       <>
                       
-                        <Link to='/items/create'>New Item</Link>
+                        
                         <h3>Welcome, {props.currentUser.username}!</h3>
                         <button onClick={props.logout}>Log Out</button>
                        
