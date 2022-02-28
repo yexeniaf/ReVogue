@@ -32,6 +32,7 @@ useEffect (() => {
         <Route path="/items/*" element= {<ItemsContainer setCurrentUser={setCurrentUser}/>} />
         <Route path="/login" element= {<Login setCurrentUser={setCurrentUser}/>} />
         <Route path="/signup" element= {<Signup setCurrentUser={setCurrentUser} />} />
+        
       </Routes>
     </div>
   );

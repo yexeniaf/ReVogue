@@ -5,9 +5,10 @@ export default function CreateItem(props) {
   const [title, setTitle] = useState('')
   const [price, setPrice] = useState(0)
   const [size, setSize] = useState('')
-  const [condition, setCondiiton] = useState('')
+  const [condition, setConditon] = useState('')
   const [category, setCategory] = useState('')
   const [image_url, setImage_url] = useState('')
+  
   return (
     <form onSubmit={(e) => {
       e.preventDefault()
@@ -15,6 +16,7 @@ export default function CreateItem(props) {
         title,
         price,
         size,
+        condition,
         category,
         image_url
       }
@@ -34,6 +36,11 @@ export default function CreateItem(props) {
         type='text'
         onChange={(e) => setSize(e.target.value)}
         value={size}
+      />
+      <input
+        type='text'
+        onChange={(e) => setConditon(e.target.value)}
+        value={condition}
       />
       <input
         type='text'
