@@ -1,12 +1,12 @@
 import { api } from "./apiConfig";
 
 export const getItemComments = async (item_id) => {
-    const res = await api.get(`/item/${item_id}/comments`)
+    const res = await api.get(`/items/${item_id}/comments`)
     return res.data
 }
 
-export const createComment = async (item_id, commetData) => {
-    const res = await api.post(`/items/${item_id}/comments`, {comment: commetData})
+export const createComment = async (item_id, commentData) => {
+    const res = await api.post(`/items/${item_id}/comments`, {comment: commentData})
     return res.data
 }
 
@@ -16,6 +16,6 @@ export const updateComment = async (item_id, comment_id, commentData) => {
 }
 
 export const deleteComment = async (item_id, comment_id) => {
-    const res = await api.delete(`/item/${item_id}/comments/${comment_id}`)
+    const res = await api.delete(`/items/${item_id}/comments/${comment_id}`)
     return res.data
 }
