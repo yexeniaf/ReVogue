@@ -34,11 +34,11 @@ export default function ItemDetail(props) {
     }
 
   return (
-    <div>
+    <div className="pt-6">
         {
             item?.id ?
             <>
-                <img src={item.image_url} />
+                <img src={item.image_url} alt={item.image_url} className="detailImage" />
                 <h3>{item.title}</h3>
                 <h4>${item.price}</h4>
                 <h4>{item.size}</h4>
