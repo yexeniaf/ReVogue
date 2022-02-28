@@ -1,7 +1,4 @@
 import React from 'react';
-import { Fragment } from 'react'
-import { Popover, Transition } from '@headlessui/react'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 export default function Home() {
   return (
@@ -40,9 +37,9 @@ export default function Home() {
         />
       </div>
     </div>
-    <container>
+    <div>
       <h1>section</h1>
-    </container>
+    </div>
     
     </div>
   )

@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { Link, Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import {  getAllItems, createItem, updateItem, deleteItem } from '../services/items';
 import ItemDetail from '../components/ItemDetail';
 import Items from '../components/Items';
@@ -20,6 +20,12 @@ export default function ItemsContainer(props) {
     fetchItems()
   }, [toggle])
 
+  const handleDelete = async (id) => {
+    await deleteItem(id)
+    setToggle(prevToggle => !prevToggle)
+    navigate('/items')
+  }
+
   const handleCreate = async (formData) => {
     await createItem(formData)
     setToggle(prevToggle => !prevToggle)
@@ -32,11 +38,7 @@ export default function ItemsContainer(props) {
     navigate(`/items/${id}`)
   }
 
-  const handleDelete = async (id) => {
-    await deleteItem(id)
-    setToggle(prevToggle => !prevToggle)
-    navigate('/items')
-  }
+  
 
 
   return (
@@ -48,6 +50,14 @@ export default function ItemsContainer(props) {
           path='/' 
           element={<Items 
             items={items} 
+            currentUser={props.currentUser}
+          />}
+        />
+        <Route
+          path='/:id'
+          element= {<ItemDetail
+            items={items}
+            handleDelete={handleDelete}
             currentUser={props.currentUser}
           />}
         />
@@ -64,14 +74,7 @@ export default function ItemsContainer(props) {
             items={items}
           />}
         />
-        <Route
-          path='/:id'
-          element= {<ItemDetail
-            items={items}
-            handleDelete={handleDelete}
-            currentUser={props.currentUser}
-          />}
-        />
+        
       </Routes>
     </div>
    

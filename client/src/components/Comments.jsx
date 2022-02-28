@@ -2,13 +2,15 @@ import React from 'react'
 
 export default function Comments(props) {
   return (
-    <div>
+    <div className='container overflow-y-scroll border-8'>
+      <h1>Comment Section:</h1>
+    <div >
       {props.comments && 
         props.comments.map(comment => (
-          <div key={comment.id}>
+        
+          <div key={comment.id} >
             <h3>{comment.title}</h3>
             <h4>Author: {comment.user.username}</h4>
-            <h5>{comment.potentialBuyer} Potential Buyer</h5>
             <p>{comment.content}</p>
 
             {
@@ -22,9 +24,11 @@ export default function Comments(props) {
                 :
                 null
             }
+          
           </div>
         ))
       }
+    </div>
     </div>
   )
 }

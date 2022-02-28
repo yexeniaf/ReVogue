@@ -10,55 +10,117 @@ export default function CreateItem(props) {
   const [image_url, setImage_url] = useState('')
   
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault()
-      const product = {
-        title,
-        price,
-        size,
-        condition,
-        category,
-        image_url
-      }
-      props.handleCreate(product)
-    }}>
-      <input
-        placeholder='title'
-        type='text'
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-      />
-      <input
-        placeholder='price'
-        type='number'
-        onChange={(e) => setPrice(e.target.valueAsNumber)}
-        value={price}
-      />
-      <input
-        placeholder='size'
-        type='text'
-        onChange={(e) => setSize(e.target.value)}
-        value={size}
-      />
-      <input
-        placeholder='Condition'
-        type='text'
-        onChange={(e) => setConditon(e.target.value)}
-        value={condition}
-      />
-      <input
-        placeholder='Category'
-        type='text'
-        onChange={(e) => setCategory(e.target.value)}
-        value={category}
-      />
-      <input
-        placeholder='image url'
-        type='text'
-        onChange={(e) => setImage_url(e.target.value)}
-        value={image_url}
-      />
-      <button>Create</button>
+    <div className="mt-5 md:mt-0 md:col-span-2">
+      
+      <form onSubmit={(e) => {
+          e.preventDefault()
+          const product = {
+            title,
+            price,
+            size,
+            condition,
+            category,
+            image_url
+          }
+            props.handleCreate(product)
+      }}>
+        <div className="shadow sm:rounded-md sm:overflow-hidden ">
+       
+          <div className="px-4 py-5 bg-yellow-200 space-y-6 sm:p-6 mt-8 md:my-20">
+          <h1>New Item</h1>
+            <div className="grid grid-cols-3 gap-6">
+              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                Item Name
+              </label>
+              <div className="mt-1 flex rounded-md shadow-sm">
+                <input
+                  placeholder='title'
+                  type='text'
+                  onChange={(e) => setTitle(e.target.value)}
+                  value={title}
+                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-6">
+              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                Price
+              </label>
+              <div className="mt-1 flex rounded-md shadow-sm">
+                <input
+                  placeholder='price'
+                  type='number'
+                  onChange={(e) => setPrice(e.target.valueAsNumber)}
+                  value={price}
+                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-6">
+              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                Size
+              </label>
+              <div className="mt-1 flex rounded-md shadow-sm">
+                <input
+                  placeholder='size'
+                  type='text'
+                  onChange={(e) => setSize(e.target.value)}
+                  value={size}
+                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-6">
+              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                Condition
+              </label>
+              <div className="mt-1 flex rounded-md shadow-sm">
+                <textarea
+                  placeholder='Condition'
+                  type='text'
+                  onChange={(e) => setConditon(e.target.value)}
+                  value={condition}
+                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-6">
+              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                Category
+              </label>
+              <div className="mt-1 flex rounded-md shadow-sm">
+                <input
+                  placeholder='Category'
+                  type='text'
+                  onChange={(e) => setCategory(e.target.value)}
+                  value={category}
+                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-6">
+              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+                Image URL
+              </label>
+              <div className="mt-1 flex rounded-md shadow-sm">
+                <input
+                  placeholder='image url'
+                  type='text'
+                  onChange={(e) => setImage_url(e.target.value)}
+                  value={image_url}
+                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                />
+              </div>
+            </div>
+
+
+      <button  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-lime-700 hover:bg-lime-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+      >Create</button>
+      
+      </div>
+      </div>
     </form>
+    
+    </div>
   )
 }
