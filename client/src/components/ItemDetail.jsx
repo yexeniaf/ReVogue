@@ -40,6 +40,9 @@ export default function ItemDetail(props) {
 
   return (
     <div className="pt-6">
+        <div className=' flex  ml-4 right-0 text- font-sm tracking-tight text-gray-900 sm:text-3xl'>
+        <Link to="/items">Back</Link>
+        </div>
         {
             item?.id ?
             <>
