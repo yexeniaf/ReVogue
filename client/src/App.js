@@ -9,9 +9,10 @@ import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CreateItem from './components/CreateItem';
+import Error from './components/Error';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState([])
 
 useEffect (() => {
   const getUser = async () => {
@@ -24,7 +25,7 @@ useEffect (() => {
 
   const logout = () => {
     localStorage.removeItem('authToken')
-    setCurrentUser(null)
+    setCurrentUser([])
   }
 
   return (
@@ -35,7 +36,7 @@ useEffect (() => {
         <Route path="/items/*" element= {<ItemsContainer  currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
         <Route path="/login" element= {<Login setCurrentUser={setCurrentUser}/>} />
         <Route path="/signup" element= {<Signup setCurrentUser={setCurrentUser} />} />
-        <Route path='/items/create' element={currentUser.is_admin ? <CreateItem /> : <Error />} />
+        <Route path='/items/create' element={currentUser.is_admin ? <CreateItem /> : <Error  />} />
         
         
       </Routes>

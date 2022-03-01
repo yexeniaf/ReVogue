@@ -1,6 +1,7 @@
 import {Link, Route} from 'react-router-dom'
 import { Disclosure} from '@headlessui/react'
 import {MenuIcon, XIcon } from '@heroicons/react/outline'
+import Error from './Error'
 
 
 
@@ -61,7 +62,15 @@ export default function Navbar(props) {
                 </div>
                 {props.currentUser ?
                   <>
-                    <Link to='/items/create' className='text-gray-200'>New Item</Link>
+                    {props.currentUser.is_admin ?
+                      <>
+                        <Link to='/items/create' className='text-gray-200'>New Item</Link>
+                      </>
+                      :
+                      <>
+                      <Error />
+                      </>
+                  }
                     <h3 className='text-gray-200'>Welcome, {props.currentUser.username}!</h3>
                     <button className='text-gray-200' onClick={props.logout}>Log Out</button>
                   </>
