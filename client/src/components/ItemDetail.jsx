@@ -33,6 +33,7 @@ export default function ItemDetail(props) {
         await deleteComment(id, comment_id)
         setToggle(prevToggle => !prevToggle)
     }
+    console.log(props)
 
   return (
     <div className="pt-6">
