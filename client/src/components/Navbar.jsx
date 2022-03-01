@@ -2,6 +2,7 @@ import {Link, Route} from 'react-router-dom'
 import { Disclosure} from '@headlessui/react'
 import {MenuIcon, XIcon } from '@heroicons/react/outline'
 import Error from './Error'
+import { useEffect, useState } from 'react'
 
 
 
@@ -11,6 +12,15 @@ function classNames(...classes) {
 
 
 export default function Navbar(props) {
+//  const [user, setUser] = useState(props.currentUser)
+
+  // useEffect(() => {
+  //   // props.setCurrentUser(props.currentUser)
+  //   setUser(props.currentUser)
+  //   console.log(user)
+
+  // }, [user])
+
   return (
     <Disclosure as="nav" className="sticky top-0 z-50 bg-lime-800">
       {({ open }) => (
@@ -19,7 +29,6 @@ export default function Navbar(props) {
             <div className="relative flex items-center justify-between h-16 ">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden ">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
@@ -35,8 +44,8 @@ export default function Navbar(props) {
                     {props.currentUser ?
                       <>
                       
-                        <Link to="/items/create">New Item</Link>
-                        <h3>Welcome, {props.currentUser.username}!</h3>
+                        {props.currentUser.is_admin && <Link to="/items/create">New Item</Link>}
+                         {props.currentUser && <h3>Welcome, {props.currentUser.username}!</h3>}
                         <button onClick={props.logout}>Log Out</button>
                        
                       </>
@@ -62,15 +71,7 @@ export default function Navbar(props) {
                 </div>
                 {props.currentUser ?
                   <>
-                    {props.currentUser.is_admin ?
-                      <>
-                        <Link to='/items/create' className='text-gray-200'>New Item</Link>
-                      </>
-                      :
-                      <>
-                      <Error />
-                      </>
-                  }
+                    {/* <Link to='/items/create' className='text-gray-200'>New Item</Link> */}
                     <h3 className='text-gray-200'>Welcome, {props.currentUser.username}!</h3>
                     <button className='text-gray-200' onClick={props.logout}>Log Out</button>
                   </>

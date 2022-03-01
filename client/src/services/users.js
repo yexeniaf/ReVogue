@@ -8,8 +8,9 @@ export const loginUser = async (loginData) => {
     localStorage.setItem('authToken', res.data.token)
     ///Defaults our headers and assign it to be our token
     api.defaults.headers.common.authorization = `Bearer ${res.data.token}`
+    console.log(res.data.user)
     /// Returns the user
-    return res.data.user
+    return await res.data.user
 }
 
 ///Signing up a user

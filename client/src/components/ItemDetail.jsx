@@ -84,7 +84,7 @@ export default function ItemDetail(props) {
                             handleCommentDelete={handleCommentDelete}
                         />
                         <br/>
-                        <CreateComment  handleCommentCreate={ handleCommentCreate}/>
+                        {props.currentUser && <CreateComment  handleCommentCreate={ handleCommentCreate}/>}
                     </div>
                 </>
             :

@@ -29,7 +29,8 @@ export default function Login(props) {
                         username,  
                         password
                     }
-                    const res = loginUser(user)
+                    const res = await loginUser(user)
+                    console.log(res)
                     props.setCurrentUser(res)
 
                     navigate("/")
