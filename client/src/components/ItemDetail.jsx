@@ -5,10 +5,6 @@ import Comments from './Comments';
 import CreateComment from './CreateComment';
 
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-  }
-
 export default function ItemDetail(props) {
     const [item, setItem] = useState({})
     const [comments, setComments] = useState([])
@@ -54,31 +50,32 @@ export default function ItemDetail(props) {
                             <br/>
                             <div className="mt-4 lg:mt-0 lg:row-span-3 ">
                                 <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 border-4">
-                                    <h2>Product information:</h2>
+                                <div className="mt-4 lg:mt-0 lg:row-span-3">
+                                    <h2>Item information:</h2>
                                     <br/>
                                     <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{item.title}</h1>
                                     <h4 className="text-2xl text-gray-900">${item.price}</h4>
                                     <br/>
-                                    <div className="mt-4 lg:mt-0 lg:row-span-3">
+                                    
                                         <h4>Size: {item.size}</h4>
                                         <h4 className="text-base text-gray-900"> Condition: {item.condition}</h4>
                                         <h5 className="text-sm font-medium text-gray-900"> Category: {item.category}</h5>
+
+                                        {
+                                            props.currentUser?.id === item.user_id ?
+                                                <>
+                                                    <Link to={`/items/${item.id}/edit`}>
+                                                        <button>Edit Item</button>
+                                                    </Link>
+                                                    <button onClick={() => props.handleDelete}> Delete Item</button>
+                                                </>
+                                                :
+                                                null   
+                                        }
                                     </div>
                                 </div>
                 
                             </div>
-
-                            {
-                                props.currentUser?.id === item.user_id ?
-                                    <>
-                                        <Link to={`/items/${item.id}/edit`}>
-                                            <button>Edit Item</button>
-                                        </Link>
-                                        <button onClick={() => props.handleDelete}> Delete Item</button>
-                                    </>
-                                :
-                                null
-                            }
                         </div>
                         <Comments
                             currentUser = {props.currentUser}
@@ -86,8 +83,7 @@ export default function ItemDetail(props) {
                             handleCommentDelete={handleCommentDelete}
                         />
                         <br/>
-                        <CreateComment className="sticky bottom-0" handleCommentCreate={ handleCommentCreate}/>
-                
+                        <CreateComment  handleCommentCreate={ handleCommentCreate}/>
                     </div>
                 </>
             :

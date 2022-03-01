@@ -12,23 +12,23 @@ export default function ItemEdit(props) {
   const {id} = useParams()
 
   useEffect(() => {
-    const foundProduct = props.products.find(product => {
-      return product.id === parseInt(id)
+    const foundItem = props.item.find(item => {
+      return item.id === parseInt(id)
     })
-    if (foundProduct) {
-      setTitle(foundProduct.title)
-      setPrice(foundProduct.price)
-      setSize(foundProduct.size)
-      setConditon(foundProduct.condition)
-      setCategory(foundProduct.category)
-      setImage_url(foundProduct.image_url)
+    if (foundItem) {
+      setTitle(foundItem.title)
+      setPrice(foundItem.price)
+      setSize(foundItem.size)
+      setConditon(foundItem.condition)
+      setCategory(foundItem.category)
+      setImage_url(foundItem.image_url)
     }
-  }, [id, props.products ])
+  }, [id, props.items ])
 
   return (
     <form onSubmit={(e) => {
       e.preventDefault()
-      const product = {
+      const item = {
         title,
         price,
         size,
@@ -36,7 +36,7 @@ export default function ItemEdit(props) {
         category,
         image_url
       }
-      props.handleCreate(product)
+      props.handleCreate(item)
     }}>
       <input
         type='text'
@@ -68,7 +68,7 @@ export default function ItemEdit(props) {
         onChange={(e) => setImage_url(e.target.value)}
         value={image_url}
       />
-      <button>Create</button>
+      <button>Edit</button>
     </form>
   )
 }

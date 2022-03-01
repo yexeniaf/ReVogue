@@ -39,13 +39,13 @@ nav {
 }
 
 .about-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
-  margin-top: 10px;
-  margin-left: 350px;
-  padding-bottom: 30px;
+  display: inline-block;
+	width: 40vw;
+  height: 25.5vw;
+  margin-left: 10px;
+  margin-right: 10px;
+	position: relative;
+	text-align: center;
 }
 
 .social-media {
@@ -68,4 +68,10 @@ footer {
   display: flex;
   justify-content: space-between;
   align-content: center;
+}
+
+@media only screen and (max-width: 600px){
+  body {
+    font-size: 10px;
+  }
 }

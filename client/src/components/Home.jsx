@@ -47,11 +47,11 @@ export default function Home() {
       <br/>
       <br/>
 
-      <div className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mt-10">
+      <div className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mt-10 mb-3">
         <h1 className="about-title block text-lime-800 xl:inline">ABOUT US:</h1>
       </div>
 
-      <div className='  about-container'>
+      <div className='about-container'>
         <p> 
           Hello, World! Welcome to ReVogue, a thrift store where we personally hand pick items we find for you. So, the only thing you have to worry about
           is serving looks. ReVogue was founded by four talented individuals; Kenia, Ilvea, Adela & Yexenia, aka us! Our core mission is help gap and merge 
@@ -61,8 +61,7 @@ export default function Home() {
           To insure that we provide the best quality of each hand picked item, we go through various stages and protocols. We appericate all the support!  
         </p>
       </div>
-      <br/>
-      <div className='bg-white m-4 p-4 mb-12' >
+      <div className='bg-white mx-3 p-4 mb-12' >
         <div className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
           <h1 className="about-title block text-lime-800 xl:inline"> Behind the Brand</h1>
         </div>
@@ -71,17 +70,17 @@ export default function Home() {
           <div>
             <img className="border-4" src={kenia}/>
           </div>
-        <div>
-          <img className="border-4" src={ilvea}/>
-        </div>
-        <div>
-          <img className="border-4" src={yexenia}/>
-        </div>
-        <div>
-          <img className="border-4" src={adela}/>
+          <div>
+            <img className="border-4" src={ilvea}/>
+          </div>
+          <div>
+            <img className="border-4" src={yexenia}/>
+          </div>
+          <div>
+            <img className="border-4" src={adela}/>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }

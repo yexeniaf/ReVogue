@@ -68,8 +68,8 @@ export default function ItemsContainer(props) {
           />}
         />
         <Route
-          path='/:id/edit'
-          element= {<ItemEdit
+          path='/:id/edit' element= {
+          <ItemEdit
             handleEdit={handleEdit}
             items={items}
           />}
