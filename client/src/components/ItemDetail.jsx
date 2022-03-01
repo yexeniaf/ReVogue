@@ -53,7 +53,7 @@ export default function ItemDetail(props) {
                             </div>
                             <br/>
                             <div className="mt-4 lg:mt-0 lg:row-span-3 ">
-                                <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 border-4 ">
+                                <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 border-4">
                                     <h2>Product information</h2>
                                     <br/>
                                     <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{item.title}</h1>
@@ -85,8 +85,6 @@ export default function ItemDetail(props) {
                             comments = {comments}
                             handleCommentDelete={handleCommentDelete}
                         />
-                        <br/>
-                        <br/>
                         <br/>
                         <CreateComment className="sticky bottom-0" handleCommentCreate={ handleCommentCreate}/>
                 

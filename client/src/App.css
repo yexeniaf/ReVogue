@@ -13,6 +13,13 @@ body {
 
 }
 
+.comment-container {
+  height: auto;
+  max-height: 710px;
+  width: auto;
+
+}
+
 .detailImage {
   height: 250px;
   width: 250px;

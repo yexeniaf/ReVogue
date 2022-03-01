@@ -25,9 +25,9 @@ export default function CreateItem(props) {
             props.handleCreate(product)
       }}>
         <div className="sm:overflow-hidden">
-        <div className="text-xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
-        <h1 className="items-title about-title block text-white text-border-2 xl:inline"> New Item</h1>
-      </div>
+          <div className="text-xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
+            <h1 className="items-title about-title block text-white text-border-2 xl:inline"> New Item</h1>
+          </div>
           <div className="px-4 py-5 bg-yellow-200 space-y-6 sm:p-6 mt-8 md:my-10 ">
             <div className="grid grid-cols-3">
               <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">

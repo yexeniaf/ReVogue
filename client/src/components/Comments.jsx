@@ -2,8 +2,11 @@ import React from 'react'
 
 export default function Comments(props) {
   return (
-    <div className=' comment-container overflow-scroll border-8'>
-      <h1>Comment Section:</h1>
+    <div>
+      <div className="text-xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl mb-4">
+        <h1 className="items-title about-title block text-white text-border-2 xl:inline"> Comment Section:</h1>
+      </div>
+    <div className='comment-container overflow-scroll border-8'>
     <div >
       {props.comments && 
         props.comments.map(comment => (
@@ -28,6 +31,7 @@ export default function Comments(props) {
           </div>
         ))
       }
+    </div>
     </div>
     </div>
   )
