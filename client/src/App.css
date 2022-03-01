@@ -5,10 +5,19 @@ body {
   background-color: antiquewhite;
 }
 
+.all-items {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+
+}
+
 .detailImage {
   height: 250px;
   width: 250px;
 }
+
 
 nav {
   margin-bottom: 20px;
