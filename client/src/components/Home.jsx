@@ -61,7 +61,7 @@ export default function Home() {
         </p>
       </div>
       <br/>
-      <div className='bg-white m-4 p-4'>
+      <div className='bg-white m-4 p-4 mb-12' >
         <div className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
           <h1 className="about-title block text-lime-800 xl:inline"> Behind the Brand</h1>
         </div>

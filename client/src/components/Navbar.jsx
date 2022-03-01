@@ -34,7 +34,7 @@ export default function Navbar(props) {
                     {props.currentUser ?
                       <>
                       
-                        
+                        <Link to="/items/create">New Item</Link>
                         <h3>Welcome, {props.currentUser.username}!</h3>
                         <button onClick={props.logout}>Log Out</button>
                        
