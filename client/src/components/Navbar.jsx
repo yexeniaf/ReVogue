@@ -1,8 +1,7 @@
 import {Link, Route} from 'react-router-dom'
 import { Disclosure} from '@headlessui/react'
 import {MenuIcon, XIcon } from '@heroicons/react/outline'
-import Error from './Error'
-import { useEffect, useState } from 'react'
+
 
 
 
@@ -12,14 +11,6 @@ function classNames(...classes) {
 
 
 export default function Navbar(props) {
-//  const [user, setUser] = useState(props.currentUser)
-
-  // useEffect(() => {
-  //   // props.setCurrentUser(props.currentUser)
-  //   setUser(props.currentUser)
-  //   console.log(user)
-
-  // }, [user])
 
   return (
     <Disclosure as="nav" className="sticky top-0 z-50 bg-lime-800">
@@ -71,7 +62,6 @@ export default function Navbar(props) {
                 </div>
                 {props.currentUser ?
                   <>
-                    {/* <Link to='/items/create' className='text-gray-200'>New Item</Link> */}
                     <h3 className='text-gray-200'>Welcome, {props.currentUser.username}!</h3>
                     <button className='text-gray-200' onClick={props.logout}>Log Out</button>
                   </>

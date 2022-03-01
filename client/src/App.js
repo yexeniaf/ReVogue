@@ -36,7 +36,6 @@ useEffect (() => {
         <Route path="/items/*" element= {<ItemsContainer  currentUser={currentUser}/>} />
         {!currentUser && <Route path="/login" element= {<Login setCurrentUser={setCurrentUser}/>} />}
         <Route path="/signup" element= {<Signup setCurrentUser={setCurrentUser} />} />
-        {/* <Route path='/items/create' element={currentUser.is_admin ? <CreateItem /> : <Error  />} /> */}
         
         
       </Routes>
