@@ -3,9 +3,9 @@ import React from 'react'
 export default function Footer() {
   return (
     <footer className=" inset-x-0 bottom-0 w-full mt-24 bg-lime-800">
-        <div className='footer-content'>
+      <div className='footer-content'>
         <div>
-            &copy; Yexenia Flores 2022
+          &copy; Yexenia Flores 2022
         </div>
         <div className="social-media">
           <div className="icons">
@@ -28,8 +28,7 @@ export default function Footer() {
             </a>
           </div>
           </div>
-
-        </div>
+      </div>
     </footer>
   )
 }
