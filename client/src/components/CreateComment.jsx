@@ -4,7 +4,6 @@ export default function CreateComment(props) {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
 
-
   return (
     <form className='bg-neutral-200 flex flex-col p-6 mb-12' 
         onSubmit={(e) => {

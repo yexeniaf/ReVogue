@@ -4,7 +4,6 @@ import kenia from "../images/kenia.png"
 import ilvea from "../images/ilvea.png"
 import yexenia from "../images/yexenia.png"
 
-
 export default function Home() {
   return (
     <div>

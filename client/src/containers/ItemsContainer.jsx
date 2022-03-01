@@ -37,14 +37,9 @@ export default function ItemsContainer(props) {
     setToggle(prevToggle => !prevToggle)
     navigate(`/items/${id}`)
   }
-
   
-
-
   return (
-
     <div>
-      
       <Routes>
         <Route 
           path='/' 
@@ -74,9 +69,7 @@ export default function ItemsContainer(props) {
             items={items}
           />}
         />
-        
       </Routes>
     </div>
-   
   )
 }

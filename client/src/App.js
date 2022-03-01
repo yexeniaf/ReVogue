@@ -8,20 +8,17 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import CreateItem from './components/CreateItem';
-import Error from './components/Error';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
 
-useEffect (() => {
-  const getUser = async () => {
-    const user = await verifyUser()
-    setCurrentUser(user)
-  }
-  getUser()
-}, [])
-
+  useEffect (() => {
+    const getUser = async () => {
+      const user = await verifyUser()
+      setCurrentUser(user)
+    }
+    getUser()
+  }, [])
 
   const logout = () => {
     localStorage.removeItem('authToken')
@@ -36,8 +33,6 @@ useEffect (() => {
         <Route path="/items/*" element= {<ItemsContainer  currentUser={currentUser}/>} />
         {!currentUser && <Route path="/login" element= {<Login setCurrentUser={setCurrentUser}/>} />}
         <Route path="/signup" element= {<Signup setCurrentUser={setCurrentUser} />} />
-        
-        
       </Routes>
       <Footer />
     </div>

@@ -4,7 +4,6 @@ import { getItemComments, createComment, deleteComment } from '../services/comme
 import Comments from './Comments';
 import CreateComment from './CreateComment';
 
-
 export default function ItemDetail(props) {
     const [item, setItem] = useState({})
     const [comments, setComments] = useState([])
@@ -33,7 +32,6 @@ export default function ItemDetail(props) {
         await deleteComment(id, comment_id)
         setToggle(prevToggle => !prevToggle)
     }
-
 
   return (
     <div className="pt-6">
