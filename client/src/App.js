@@ -7,6 +7,7 @@ import ItemsContainer from './containers/ItemsContainer';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -35,6 +36,7 @@ useEffect (() => {
         
         
       </Routes>
+      <Footer />
     </div>
   );
 }

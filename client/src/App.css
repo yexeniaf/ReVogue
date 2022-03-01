@@ -13,3 +13,38 @@ body {
 nav {
   margin-bottom: 20px;
 }
+
+.about-title {
+  margin-top: 20px;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  margin-top: 10px;
+  margin-left: 350px;
+  padding-bottom: 30px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
