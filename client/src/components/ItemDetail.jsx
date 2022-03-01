@@ -33,7 +33,7 @@ export default function ItemDetail(props) {
         await deleteComment(id, comment_id)
         setToggle(prevToggle => !prevToggle)
     }
-    console.log(props)
+
 
   return (
     <div className="pt-6">
@@ -51,17 +51,15 @@ export default function ItemDetail(props) {
                             <br/>
                             <div className="mt-4 lg:mt-0 lg:row-span-3 ">
                                 <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 border-4">
-                                <div className="mt-4 lg:mt-0 lg:row-span-3">
-                                    <h2>Item information:</h2>
-                                    <br/>
-                                    <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{item.title}</h1>
-                                    <h4 className="text-2xl text-gray-900">${item.price}</h4>
-                                    <br/>
-                                    
+                                    <div className="mt-4 lg:mt-0 lg:row-span-3">
+                                        <h2>Item information:</h2>
+                                        <br/>
+                                        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{item.title}</h1>
+                                        <h4 className="text-2xl text-gray-900">${item.price}</h4>
+                                        <br/>
                                         <h4>Size: {item.size}</h4>
                                         <h4 className="text-base text-gray-900"> Condition: {item.condition}</h4>
                                         <h5 className="text-sm font-medium text-gray-900"> Category: {item.category}</h5>
-
                                         {
                                             props.currentUser?.id === item.user_id ?
                                                 <>
@@ -71,11 +69,10 @@ export default function ItemDetail(props) {
                                                     <button onClick={() => props.handleDelete}> Delete Item</button>
                                                 </>
                                                 :
-                                                null   
+                                            null   
                                         }
                                     </div>
                                 </div>
-                
                             </div>
                         </div>
                         <Comments
