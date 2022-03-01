@@ -5,7 +5,6 @@ import ilvea from "../images/ilvea.png"
 import yexenia from "../images/yexenia.png"
 
 
-
 export default function Home() {
   return (
     <div>
@@ -43,14 +42,11 @@ export default function Home() {
           />
         </div>
       </div>
-
       <br/>
       <br/>
-
       <div className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl mt-10 mb-3">
         <h1 className="about-title block text-lime-800 xl:inline">ABOUT US:</h1>
       </div>
-
       <div className='about-container'>
         <p> 
           Hello, World! Welcome to ReVogue, a thrift store where we personally hand pick items we find for you. So, the only thing you have to worry about
