@@ -11,7 +11,6 @@ export default function CreateItem(props) {
   
   return (
     <div className="mt-3 md:mt-0 md:col-span-2 mx-10">
-      
       <form onSubmit={(e) => {
           e.preventDefault()
           const product = {
@@ -24,39 +23,39 @@ export default function CreateItem(props) {
           }
             props.handleCreate(product)
       }}>
-        <div className="sm:overflow-hidden">
-          <div className="text-xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
-            <h1 className="items-title about-title block text-white text-border-2 xl:inline"> New Item</h1>
+      <div className="sm:overflow-hidden">
+        <div className="text-xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
+          <h1 className="items-title about-title block text-white text-border-2 xl:inline"> New Item</h1>
+        </div>
+        <div className="px-4 py-5 bg-yellow-200 space-y-6 sm:p-6 mt-8 md:my-10 ">
+          <div className="grid grid-cols-3">
+            <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+              Item Name
+            </label>
+            <div className="mt-1 flex rounded-md shadow-sm">
+              <input
+                placeholder='title'
+                type='text'
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+                className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+              />
+            </div>
           </div>
-          <div className="px-4 py-5 bg-yellow-200 space-y-6 sm:p-6 mt-8 md:my-10 ">
-            <div className="grid grid-cols-3">
-              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
-                Item Name
-              </label>
-              <div className="mt-1 flex rounded-md shadow-sm">
-                <input
-                  placeholder='title'
-                  type='text'
-                  onChange={(e) => setTitle(e.target.value)}
-                  value={title}
-                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                />
-              </div>
+          <div className="grid grid-cols-3">
+            <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
+              Price
+            </label>
+            <div className="mt-1 flex rounded-md shadow-sm">
+              <input
+                placeholder='price'
+                type='number'
+                onChange={(e) => setPrice(e.target.valueAsNumber)}
+                value={price}
+                className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+              />
             </div>
-            <div className="grid grid-cols-3">
-              <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
-                Price
-              </label>
-              <div className="mt-1 flex rounded-md shadow-sm">
-                <input
-                  placeholder='price'
-                  type='number'
-                  onChange={(e) => setPrice(e.target.valueAsNumber)}
-                  value={price}
-                  className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
-                />
-              </div>
-            </div>
+          </div>
             <div className="grid grid-cols-3 ">
               <label htmlFor="company-website" className="block text-sm font-medium text-gray-700">
                 Size
@@ -113,15 +112,12 @@ export default function CreateItem(props) {
                 />
               </div>
             </div>
-
-
-      <button  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-lime-700 hover:bg-lime-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-      >Create</button>
-      
-      </div>
-      </div>
-    </form>
-    
+            <button  className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-lime-700 hover:bg-lime-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Create
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   )
 }
