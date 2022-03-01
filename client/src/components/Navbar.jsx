@@ -15,7 +15,7 @@ export default function Navbar(props) {
   return (
     <Disclosure as="nav" className="sticky top-0 z-50 bg-lime-800">
       {({ open }) => (
-         <>
+        <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
             <div className="relative flex items-center justify-between h-16 ">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden ">
@@ -34,11 +34,9 @@ export default function Navbar(props) {
                     <Link  to='/items'>Items</Link>
                     {props.currentUser ?
                       <>
-                      
                         {props.currentUser.is_admin && <Link to="/items/create">New Item</Link>}
                          {props.currentUser && <h3>Welcome, {props.currentUser.username}!</h3>}
                         <button onClick={props.logout}>Log Out</button>
-                       
                       </>
                       :
                       <>
@@ -51,31 +49,29 @@ export default function Navbar(props) {
               </div>
             </div>
           </div>
-
-            <Disclosure.Panel className="sm:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+          <Disclosure.Panel className="sm:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
                 <div>
                   <Link to='/' className='text-white'>Home</Link>
                 </div>
                 <div>
                   <Link to='/items' className='text-gray-200'>Items</Link>
                 </div>
-                {props.currentUser ?
-                  <>
-                    <h3 className='text-gray-200'>Welcome, {props.currentUser.username}!</h3>
-                    <button className='text-gray-200' onClick={props.logout}>Log Out</button>
-                  </>
-                  :
-                  <>
-                    <Link to='/login'>Login</Link>
-                    <Link to='/signup'>Sign Up</Link>
-                  </>
-                }
-              </div>
-            </Disclosure.Panel>
-          </>
-        )
-      }
+              {props.currentUser ?
+                <>
+                  <h3 className='text-gray-200'>Welcome, {props.currentUser.username}!</h3>
+                  <button className='text-gray-200' onClick={props.logout}>Log Out</button>
+                </>
+                :
+                <>
+                  <Link to='/login'>Login</Link>
+                  <Link to='/signup'>Sign Up</Link>
+                </>
+              }
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
     </Disclosure>
   )
 }
