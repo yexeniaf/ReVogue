@@ -2,6 +2,7 @@ import React from 'react';
 import adela from "../images/adela.png"
 import kenia from "../images/kenia.png"
 import ilvea from "../images/ilvea.png"
+import yexenia from "../images/yexenia.png"
 
 
 
@@ -59,22 +60,19 @@ export default function Home() {
     </div>
     <br/>
     <div className='bg-white m-4 p-4'>
-    <div className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-    <h1 className="about-title block text-lime-800 xl:inline"> Behind the Brand</h1>
-    </div>
-    
-    <br/>
-    
-    <div className="grid grid-cols-4 gap-4 ">
-      
-      <div>
-        <img className="border-4" src={kenia}/>
+      <div className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+        <h1 className="about-title block text-lime-800 xl:inline"> Behind the Brand</h1>
+      </div>
+      <br/>
+      <div className="grid grid-cols-4 gap-4 ">
+        <div>
+          <img className="border-4" src={kenia}/>
       </div>
       <div>
         <img className="border-4" src={ilvea}/>
       </div>
       <div>
-        01
+        <img className="border-4" src={yexenia}/>
       </div>
       <div>
         <img className="border-4" src={adela}/>
