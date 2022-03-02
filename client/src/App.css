@@ -22,8 +22,9 @@ body {
 }
 
 .detailImage {
-  height: 250px;
-  width: 250px;
+  height: auto;
+  width: 370px;
+  display: initial;
 }
 
 
@@ -36,7 +37,7 @@ nav {
 }
 
 .items-title {
-  text-shadow:  -2px 0 rgb(30, 97, 71), 0 2px rgb(30, 97, 71), 2px 0 rgb(30, 97, 71), 0 -2px rgb(30, 97, 71);
+  text-shadow:  -2px 0 rgb(129, 112, 81), 0 2px rgb(129, 112, 81), 2px 0 rgb(129, 112, 81), 0 -2px rgb(129, 112, 81);
 }
 
 .about-container {
@@ -47,6 +48,12 @@ nav {
   margin-right: 10px;
 	position: relative;
 	text-align: center;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .social-media {

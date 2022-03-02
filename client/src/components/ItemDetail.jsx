@@ -35,41 +35,43 @@ export default function ItemDetail(props) {
 
   return (
     <div className="pt-6">
-        <div className=' flex  ml-4 right-0 text- font-sm tracking-tight text-gray-900 sm:text-3xl'>
-            <Link to="/items">Back</Link>
-        </div>
         {
             item?.id ?
                 <>
-                    <div className="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+                    <div className="mt-6 sm:px-6 lg:max-w-7xl  lg:grid lg:grid-cols-2 lg:gap-x-8">
                         <div>
-                            <div className="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4 border-4">
-                                <img src={item.image_url} alt={item.image_url} className="w-full h-full object-center object-cover" />
+                            <div className="aspect-w-4 aspect-h-5 sm:rounded-lg sm:overflow-hidden lg:aspect-w-3 lg:aspect-h-4 ">
+                                <img src={item.image_url} alt={item.image_url} className="detailImage object-center object-cover shadow-md" />
                             </div>
                             <br/>
                             <div className="mt-4 lg:mt-0 lg:row-span-3 ">
-                                <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 border-4">
-                                    <div className="mt-4 lg:mt-0 lg:row-span-3">
-                                        <h2>Item information:</h2>
+                                <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:pr-8 ">
+                                    <div className="info-container mt-4 lg:mt-0 lg:row-span-3">
+                                        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">Item information:</h2>
                                         <br/>
                                         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-3xl">{item.title}</h1>
                                         <h4 className="text-2xl text-gray-900">${item.price}</h4>
                                         <br/>
-                                        <h4>Size: {item.size}</h4>
-                                        <h4 className="text-base text-gray-900"> Condition: {item.condition}</h4>
-                                        <h5 className="text-sm font-medium text-gray-900"> Category: {item.category}</h5>
+                                        <h3 className="text-xl text-gray-900">Size: {item.size}</h3>
+                                        <h4 className="text-xl text-gray-900"> Condition: {item.condition}</h4>
+                                        <h5 className="text-xl text-gray-900"> Category: {item.category}</h5>
+                                        </div>
+                                        <br/>
                                         {
                                             props.currentUser?.id === item.user_id ?
                                                 <>
+                                                <div className='flex '>
                                                     <Link to={`/items/${item.id}/edit`}>
-                                                        <button>Edit Item</button>
+                                                        <button class="mr-1 bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded">Edit Item</button>
                                                     </Link>
-                                                    <button onClick={() => props.handleDelete(item.id)}> Delete Item</button>
+                                                    <br/>
+                                                    <button class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded" onClick={() => props.handleDelete(item.id)}> Delete Item</button>
+                                                </div>
                                                 </>
                                                 :
                                             null   
                                         }
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
