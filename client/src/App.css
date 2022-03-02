@@ -1,15 +1,18 @@
 .App {
   text-align: center;
 }
+
 body {
   background-color: antiquewhite;
 }
 
-/* .all-items {
+.all-items {
   height: auto;
-  max-height: 250px;
+  max-height: 350px;
+  width: auto;
+  max-width: 350px;
 
-} */
+}
 
 .comment-container {
   height: auto;

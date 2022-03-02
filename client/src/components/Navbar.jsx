@@ -10,7 +10,7 @@ function classNames(...classes) {
 export default function Navbar(props) {
 
   return (
-    <Disclosure as="nav" className="sticky top-0 z-50 bg-lime-900">
+    <Disclosure as="nav" className="sticky top-0 z-50 bg-lime-800">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
