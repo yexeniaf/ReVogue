@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { signupUser } from '../services/users';
 import { useNavigate } from 'react-router-dom';
+import logo from "../images/logo.png"
 
 export default function Signup(props) {
     const [username, setUsername] = useState("")
@@ -15,7 +16,7 @@ export default function Signup(props) {
             <div>
                 <img
                     className="mx-auto h-40 w-auto"
-                    src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/279/heart-on-fire_2764-fe0f-200d-1f525.png"
+                    src={logo}
                     alt="heart with flames"
                 />
                 <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign Up</h2>
