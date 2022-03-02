@@ -5,13 +5,11 @@ body {
   background-color: antiquewhite;
 }
 
-.all-items {
+/* .all-items {
   height: auto;
   max-height: 250px;
-  width: auto;
-  max-width: 250px;
 
-}
+} */
 
 .comment-container {
   height: auto;

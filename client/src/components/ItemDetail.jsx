@@ -64,7 +64,7 @@ export default function ItemDetail(props) {
                                                     <Link to={`/items/${item.id}/edit`}>
                                                         <button>Edit Item</button>
                                                     </Link>
-                                                    <button onClick={() => props.handleDelete}> Delete Item</button>
+                                                    <button onClick={() => props.handleDelete(item.id)}> Delete Item</button>
                                                 </>
                                                 :
                                             null   

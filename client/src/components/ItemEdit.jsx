@@ -12,7 +12,7 @@ export default function ItemEdit(props) {
   const {id} = useParams()
 
   useEffect(() => {
-    const foundItem = props.item.find(item => {
+    const foundItem = props.items.find(item => {
       return item.id === parseInt(id)
     })
     if (foundItem) {
