@@ -14,6 +14,8 @@ export default function CreateComment(props) {
                 content
             }
             props.handleCommentCreate(comment)
+            setTitle('')
+            setContent('')
         }}>
         <label>Title:</label>
         <input

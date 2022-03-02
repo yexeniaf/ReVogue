@@ -22,6 +22,7 @@ export default function CreateItem(props) {
             image_url
           }
             props.handleCreate(item)
+            console.log(item)
       }}>
       <div className="sm:overflow-hidden">
         <div className="text-xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">

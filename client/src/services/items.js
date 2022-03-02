@@ -12,6 +12,7 @@ export const getOneItem  = async (item_id) => {
 
 export const createItem  = async (itemData) => {
     const res = await api.post('/items', {item: itemData})
+    console.log(itemData)
     return res.data
 }
 
