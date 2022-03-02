@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className=" fixed  bottom-0 w-full mt-24 bg-lime-800">
-      <div className='footer-content'>
+    <footer className=" fixed bottom-0 w-full mt-24 bg-lime-800">
+      <div className='footer-content ml-2'>
         <div>
           &copy; Yexenia Flores 2022
         </div>
-        <div className="social-media">
+        <div className="social-media m-1">
           <div className="icons">
             <a href="https://github.com/yexeniaf" target="_blank">
               <img

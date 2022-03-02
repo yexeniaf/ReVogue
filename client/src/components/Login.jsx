@@ -10,7 +10,7 @@ export default function Login(props) {
   const navigate = useNavigate()
   
   return (
-    <div  className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div  className="login min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
             <div>
                 <img
@@ -18,7 +18,7 @@ export default function Login(props) {
                     src="https://i.pinimg.com/originals/5d/25/36/5d25367b787a6e03a04d82df73f4e5bd.png"
                     alt="stars"
                 />
-                <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Welcome Back!</h2>
+                <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 ">Welcome Back!</h2>
             </div>
             <form className="mt-8 space-y-6"  
                 onSubmit={async (e) => {
