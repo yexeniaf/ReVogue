@@ -54,6 +54,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  word-wrap: break-word;
 }
 .single-comment {
   display: flex;
