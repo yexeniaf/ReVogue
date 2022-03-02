@@ -13,7 +13,7 @@ export default function CreateItem(props) {
     <div className="mt-3 md:mt-0 md:col-span-2 mx-10">
       <form onSubmit={(e) => {
           e.preventDefault()
-          const product = {
+          const item = {
             title,
             price,
             size,
@@ -21,7 +21,7 @@ export default function CreateItem(props) {
             category,
             image_url
           }
-            props.handleCreate(product)
+            props.handleCreate(item)
       }}>
       <div className="sm:overflow-hidden">
         <div className="text-xl tracking-tight font-bold text-gray-900 sm:text-5xl md:text-6xl">
