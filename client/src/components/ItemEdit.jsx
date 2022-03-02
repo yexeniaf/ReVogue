@@ -36,7 +36,7 @@ export default function ItemEdit(props) {
         category,
         image_url
       }
-      props.handleCreate(item)
+      props.handleEdit(id, item)
     }}>
       <input
         type='text'
